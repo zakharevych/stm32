@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+  
+    {
+      "name": "F411RE: Debug (OpenOCD)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/debug/blinky_f411.elf",
+      "configFiles": ["board/st_nucleo_f4.cfg"],
+      "svdFile": "${workspaceFolder}/svd/STM32F411.svd",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none",
+      "preLaunchTask": "CMake: build"
+    },
+    {
+      "name": "F411RE: Attach (OpenOCD)",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/debug/blinky_f411.elf",
+      "configFiles": ["board/st_nucleo_f4.cfg"],
+      "svdFile": "${workspaceFolder}/svd/STM32F411.svd"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Blue Pill (ST-LINK)",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/debug/bluepill_blink.elf",
+      "device": "STM32F103C8",
+      "configFiles": ["${workspaceFolder}/openocd-bluepill.cfg"],
+      "runToEntryPoint": "main",
+      "preLaunchTask": "build (debug)"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CMake: build",
+      "type": "cmake",
+      "command": "build",
+      "preset": "debug",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Flash (OpenOCD)",
+      "type": "shell",
+      "command": "cmake --build --preset debug --target flash",
+      "problemMatcher": []
+    },
+    {
+      "label": "Disassembly -> build/debug/blinky_f411.lst",
+      "type": "shell",
+      "command": "cmake --build --preset debug --target disasm",
+      "problemMatcher": []
+    }
+  ]
+}
